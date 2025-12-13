@@ -3,10 +3,21 @@
 * {
     box-sizing: border-box;
     font-family: 'Noto Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --color-primary: blue;   
+    --color-secondary: green; 
+    --color-accent: orange;    
+    --color-bg: white;        
+    --color-text: black;     
 }
 body {
 
-    background: white;
+    background: var(--color-bg);
+    color: var(--color-text);
+
 }
 
 header {
@@ -14,23 +25,24 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background: skyblue;
+    background: var(--color-primary);
     color: white;
 }
 
-.logo {
-    width: 60px;
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease 0.2s; 
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
+nav ul li a:hover::after {
+    transform: scaleX(1);
 }
 
 main {
@@ -44,7 +56,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: white;
+    background: var(--color-bg);
     padding: 20px;
     border-radius: 5px;
     width: 300px;
@@ -54,7 +66,7 @@ main {
 .form-section input,
 .form-section textarea {
     padding: 8px;
-    border: 1px solid white;
+    border: 1px solid var(--color-bg);
     border-radius: 3px;
     width: 100%;
     box-sizing: border-box;
@@ -62,19 +74,19 @@ main {
 
 .form-section button {
     padding: 10px;
-    background:skyblue;
-    color: white;
+    background: var(--color-primary);
+    color: var(--color-text);
     border: none;
     border-radius: 3px;
 }
 
 .form-section button:hover {
-    background: skyblue;
+    background: var(--color-secondary);
 }
 
 
 .card {
-    background: white;
+    background: var(--color-bg);
     padding: 20px;
     margin-top: 20px;
     width: 300px;
@@ -84,9 +96,58 @@ main {
 
 
 footer {
-    background: black;
-    color: white;
+    background: var(--color-primary);
+    color: var(--color-text);
     text-align: right;
     padding: 10px 20px;
     margin-top: 20px;
+}
+
+#logo-caja {
+    position: relative;
+    display: inline-block;
+}
+
+.logo {
+    width: 60px;
+}
+
+.tooltip {
+    position: absolute;
+    background: var(--color-secondary);
+    color: var(--color-text);
+    padding: 5px 10px;
+    border-radius: 4px;
+    opacity: 0; 
+    pointer-events: none;
+    transition: opacity 0.8s ease-in-out;
+}
+
+#logo-caja:hover .tooltip {
+    opacity: 1;
+}
+
+.busqueda {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+}
+
+.busqueda input {
+    padding: 5px 10px;
+    border: 1px solid var(--color-bg);
+    border-radius: 20px;
+    width: 150px;
+    transition: width 0.5s ease; 
+}
+
+.busqueda input:focus {
+    width: 250px;
+}
+
+.busqueda button {
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 5px;
 }

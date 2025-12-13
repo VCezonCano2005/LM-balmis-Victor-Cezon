@@ -6,30 +6,36 @@
     <title>Mi Página - Práctica UT3</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
-    
-    
+    <link rel="stylesheet" href="/Fonts/fontawesome-free-6.1.2-web/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <img src="images.png" class="logo">
+        <div id="logo-caja">
+        <img src="/Assests/imgs/images.png" class="logo" alt="Logo">
+        <span class="tooltip">tooltip</span> 
+        </div>
         <nav>
             <ul>
-                <li><a href="#">Sobre mí</a></li>
-                <li><a href="#">Estudios</a></li>
-                <li><a href="#">Portafolio</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="#" title="Sobre mí"><i class="fas fa-user"></i></a></li>
+                <li><a href="#" title="Estudios"><i class="fas fa-book"></i></a></li>
+                <li><a href="portafolio.html" title="Portafolio"><i class="fas fa-briefcase"></i></a></li>
+                <li><a href="#" title="Blog"><i class="fas fa-blog"></i></a></li>
             </ul>
         </nav>
-    </header>
-
+        <form class="busqueda">
+    <input type="text" placeholder="Buscar...">
+    <button type="submit">🔍</button>
+    </form>
+</header>
 
     <main>
+
 
         <section class="form-section">
             <form>
                 <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" placeholder="Tu nombre" required autofocus>
+                <input type="text" id="name" name="name" placeholder="Tu nombre">
 
                 <label for="phone">Teléfono móvil:</label>
                 <input type="tel" id="phone" name="phone" placeholder="Tu teléfono">
@@ -49,7 +55,7 @@
             <h2>Primer Apartado</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit quaerat soluta sequi qui mollitia ipsum libero, hic debitis voluptatum, eum alias? Voluptatem nam animi minima possimus, incidunt cum ratione debitis.</p>
         </section>
-    </main>
+    </main>   
 
 
     <footer>
@@ -57,3 +63,4 @@
     </footer>
 </body>
 </html>
+  

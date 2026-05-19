@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+    --acento: #e8c97a;
+    --fondo: #0d0d0d;
+    --superficie: #161616;
+    --borde: #2a2a2a;
+    --texto: #f0ece3;
+    --texto-suave: #8a8578;
+    --radio: 12px;
+}
+
+body {
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    border-bottom: 1px solid var(--borde);
+    background: rgba(13, 13, 13, 0.92);
+    backdrop-filter: blur(10px);
+}
+
+.cabecera__logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--acento);
+}
+
+.cabecera__enlace {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+    transition: color 0.2s;
+}
+
+.cabecera__enlace:hover {
+    color: var(--texto);
+}
+
+.hero__etiqueta,
+.pagina-titulo__etiqueta {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--acento);
+}
+
+.hero__titulo,
+.pagina-titulo__h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.hero__titulo {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.pagina-titulo__h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.hero__subtitulo {
+    color: var(--texto-suave);
+    max-width: 480px;
+}
+
+.seccion__cabecera {
+    border-bottom: 1px solid var(--borde);
+}
+
+.seccion__titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.seccion__enlace-mas {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--acento);
+    transition: opacity 0.2s;
+}
+
+.seccion__enlace-mas:hover {
+    opacity: 0.7;
+}
+
+.resumen-pelicula {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: var(--radio);
+    background: var(--superficie);
+    transition: background 0.2s;
+}
+
+.resumen-pelicula:hover {
+    background: #1e1e1e;
+}
+
+.resumen-pelicula__imagen {
+    width: 48px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.resumen-pelicula__titulo {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.resumen-pelicula__valoracion {
+    font-size: 0.8rem;
+    color: var(--acento);
+}
+
+.rejilla-populares {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.tarjeta-popular {
+    width: calc(20% - 1.2rem);
+    min-width: 160px;
+    border-radius: var(--radio);
+    overflow: hidden;
+    background: var(--superficie);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-popular:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+.tarjeta-popular__imagen-contenedor {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 2/3;
+}
+
+.tarjeta-popular__imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.tarjeta-popular:hover .tarjeta-popular__imagen {
+    transform: scale(1.06);
+}
+
+.tarjeta-popular__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 50%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tarjeta-popular:hover .tarjeta-popular__overlay {
+    opacity: 1;
+}
+
+.tarjeta-popular__descripcion {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tarjeta-popular__info {
+    padding: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+}
+
+.tarjeta-popular__titulo {
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.tarjeta-popular__meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tarjeta-popular__valoracion {
+    font-size: 0.78rem;
+    color: var(--acento);
+}
+
+.tarjeta-popular__fecha {
+    font-size: 0.75rem;
+    color: var(--texto-suave);
+}
+
+.carrusel-contenedor {
+    position: relative;
+    overflow: hidden;
+    height: 80vh;
+    min-height: 480px;
+}
+
+.carrusel-pista {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s ease;
+}
+
+.diapositiva {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.diapositiva__fondo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
+}
+
+.diapositiva__contenido {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem 5rem;
+    max-width: 680px;
+}
+
+.diapositiva__titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.diapositiva__descripcion {
+    font-size: 0.95rem;
+    color: rgba(240, 236, 227, 0.75);
+    line-height: 1.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+}
+
+.diapositiva__valoracion {
+    color: var(--acento);
+    font-size: 1.1rem;
+}
+
+.diapositiva__fecha {
+    color: var(--texto-suave);
+}
+
+.carrusel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(232, 201, 122, 0.15);
+    border: 1px solid rgba(232, 201, 122, 0.3);
+    color: var(--acento);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.carrusel-control:hover {
+    background: rgba(232, 201, 122, 0.3);
+}
+
+.carrusel-control--anterior {
+    left: 1.5rem;
+}
+
+.carrusel-control--siguiente {
+    right: 1.5rem;
+}
+
+.pie {
+    padding: 2rem 3rem;
+    border-top: 1px solid var(--borde);
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .cabecera {
+        padding: 1rem 1.5rem;
+    }
+
+    .tarjeta-popular {
+        width: calc(50% - 0.75rem);
+    }
+
+    .diapositiva__contenido {
+        padding: 2rem;
+    }
+
+    .carrusel-contenedor {
+        height: 60vh;
+    }
+}
